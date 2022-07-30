@@ -1,9 +1,14 @@
+const { join } = require("path");
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ["./src/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    join(__dirname, "./pages/**/*.{js,ts,jsx,tsx}"),
+    join(__dirname, "./src/**/*.{js,ts,jsx,tsx}"),
+  ],
   theme: {
     extend: {
       colors: {},

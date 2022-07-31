@@ -1,13 +1,14 @@
-const { join } = require("path");
-
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  content: [
-    join(__dirname, "./pages/**/*.{js,ts,jsx,tsx}"),
-    join(__dirname, "./src/**/*.{js,ts,jsx,tsx}"),
+  // future: {
+  //   removeDeprecatedGapUtilities: true,
+  //   purgeLayersByDefault: true,
+  // },
+  mode: "jit",
+  purge: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    // "./pages/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

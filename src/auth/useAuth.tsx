@@ -4,6 +4,7 @@ import {
   useContext,
   createContext,
   FunctionComponent,
+  ReactNode,
 } from "react";
 import { useRouter } from "next/router";
 import firebase from "firebase/app";
@@ -25,7 +26,9 @@ const AuthContext = createContext<IAuthContext>({
   logout: () => null,
 });
 
-export const AuthProvider: FunctionComponent = ({ children }) => {
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<firebase.User | null>(null);
   const router = useRouter();
 
